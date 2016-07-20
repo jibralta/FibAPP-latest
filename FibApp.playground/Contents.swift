@@ -19,8 +19,8 @@ class FibonacciSequence {
         //TODO: Create an array which contains the numbers in the Fibonacci sequence, but don't add any numbers to the array which exceed the maxNumber. For example, if the maxNumber is 10 then the array should contain [0,1,1,2,3,5,8] because the next number is 13 which is higher than the maxNumber. If includesZero is false then you should not include the number 0 in the sequence.
         
         values = [0,1]
-        var secondToLast = values[0]
-        var lastVal = values[1]
+        var secondToLast:UInt = values[0]
+        var lastVal:UInt = values[1]
         
         if maxNumber == 0 && includesZero == false  {
             values = []
@@ -51,8 +51,8 @@ class FibonacciSequence {
         //TODO: Create an array which contains the numbers in the Fibonacci sequence, and the array should contain this many items: numberOfItemsInSequence. For example, if numberOfItemsInSequence is 10 then the array should contain [0,1,1,2,3,5,8,13,21,34] if inlcudesZero is true, or [1,1,2,3,5,8,13,21,34,55] if includesZero is false.
         
             values = [1,1]
-            var secondToLast = values[0]
-            var lastVal = values[1]
+            var secondToLast: UInt = values[0]
+            var lastVal: UInt = values[1]
         
             if numberOfItemsInSequence == 0 {
             values = []
@@ -61,7 +61,7 @@ class FibonacciSequence {
             else {
 
             for _ in 2..<numberOfItemsInSequence {
-                let oldVal = secondToLast
+                let oldVal: UInt = secondToLast
                 secondToLast = lastVal
                 lastVal = lastVal + oldVal
                 values.append(lastVal)
@@ -98,7 +98,7 @@ print(fibSequence0F.values)
 
 // NumberOfItems
 
-let anotherSequence = FibonacciSequence(numberOfItemsInSequence: 90, includesZero: true)
+let anotherSequence = FibonacciSequence(numberOfItemsInSequence: 100, includesZero: true)
 print(anotherSequence.values)
 
 let sequence2 = FibonacciSequence(numberOfItemsInSequence: 13, includesZero: false)
