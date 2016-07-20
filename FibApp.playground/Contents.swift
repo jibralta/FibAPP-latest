@@ -65,12 +65,19 @@ class FibonacciSequence {
                 secondToLast = lastVal
                 lastVal = lastVal + oldVal
                 values.append(lastVal)
+                }
+            
+            let(_, didOverflow) = UInt.addWithOverflow(lastVal, secondToLast)
+            if didOverflow == true {
+                print("Overflow! The next number is too big to store in a UInt!")
             }
+
         
             if includesZero == true {
                 values.insert(0, atIndex: 0)
                 values.removeLast()
                 }
+
             }
         }
 }
@@ -98,11 +105,13 @@ print(fibSequence0F.values)
 
 // NumberOfItems
 
-let anotherSequence = FibonacciSequence(numberOfItemsInSequence: 100, includesZero: true)
-print(anotherSequence.values)
+
 
 let sequence2 = FibonacciSequence(numberOfItemsInSequence: 13, includesZero: false)
 print(sequence2.values)
+
+let anotherSequence = FibonacciSequence(numberOfItemsInSequence: 13, includesZero: true)
+print(anotherSequence.values)
 
 let sequence3 = FibonacciSequence(numberOfItemsInSequence: 0, includesZero: true)
 print(sequence3.values)
